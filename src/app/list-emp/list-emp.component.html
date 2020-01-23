@@ -1,0 +1,32 @@
+<div class="col-md-12">  
+  <div class="col-md-12 pull-right">
+    <h3><a routerLink="/add-emp" routerLinkActive="active-link" class="btn btn-success">Add New Employee</a></h3>
+  </div>
+  <h2 class="text-center"> User Details</h2>  
+    <br>
+    <div class="table-responsive table-container">  
+      <table class="table">  
+        <thead>  
+          <tr>  
+            <th>Id</th>  
+            <th>Employee Name</th>  
+            <th>Salary</th>  
+            <th>Age</th>  
+            <th>Action</th>  
+          </tr>  
+        </thead>  
+        <tbody> 
+          <tr *ngIf="employees?.length<1"><h4>No record found...</h4></tr>
+            <tr *ngFor="let emp of employees; let i= index">  
+              <td>{{emp.id}}</td>  
+              <td>{{emp.employee_name}}</td>  
+              <td>{{emp.employee_salary}}</td>  
+              <td>{{emp.employee_age}}</td>  
+              <td>
+                <button (click)="remove(i)" class="btn btn-danger">Delete</button>
+              </td>  
+            </tr> 
+        </tbody>  
+      </table>  
+    </div>  
+  </div>  
